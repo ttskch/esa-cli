@@ -1,11 +1,8 @@
 {
     "name": "ttskch/esa-cli",
-    "description": "",
-    "keywords": [
-        "Skeleton",
-        "PSR"
-    ],
-    "homepage": "https://github.com/koriym/Koriym.PhpSkeleton",
+    "description": "esa cli client",
+    "keywords": ["esa", "esa.io", "grep"],
+    "homepage": "https://github.com/ttskch/esa-cli",
     "license": "MIT",
     "authors": [
         {
