@@ -35,13 +35,14 @@ class Proxy
 
     /**
      * @param null|string $query
+     * @param bool $force
      * @return array
      */
-    public function getPosts(?string $query): array
+    public function getPosts(?string $query, $force = false): array
     {
         $cacheKey = self::CACHE_KEY_PREFIX . '.posts.' . hash('md5', $query);
 
-        if (!$posts = $this->cache->fetch($cacheKey)) {
+        if ($force || !$posts = $this->cache->fetch($cacheKey)) {
             $posts = $this->mergePages('posts', ['q' => $query]);
             $this->cache->save($cacheKey, $posts, self::CACHE_LIFETIME);
         }

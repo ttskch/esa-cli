@@ -33,6 +33,7 @@ class GrepCommand extends Command
             ->addOption('ignore-case', 'i', InputOption::VALUE_NONE, 'Perform case insensitive matching')
             ->addOption('invert-match', 't', InputOption::VALUE_NONE, 'Select lines are not matched')
             ->addOption('line-number', 'l', InputOption::VALUE_NONE, 'Show line number')
+            ->addOption('force', 'f', InputOption::VALUE_NONE, 'Forcely refresh cache of contents')
             ->addArgument('pattern', InputArgument::REQUIRED, 'Search pattern')
         ;
     }
@@ -44,7 +45,7 @@ class GrepCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
         $query = $input->getOption('query');
-        $posts = $this->esaProxy->getPosts($query);
+        $posts = $this->esaProxy->getPosts($query, $input->getOption('force'));
 
         // convert pattern for preg_match
         $pattern = $input->getArgument('pattern');
