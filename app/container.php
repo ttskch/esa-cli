@@ -32,7 +32,7 @@ $container['grep_command'] = function($container) {
 };
 
 $container['esa_proxy'] = function($container) {
-    return new Proxy($container['esa'], $container['cache'], $container['parameters.esa_page_limit']);
+    return new Proxy($container['esa'], $container['cache'], $container['parameters.esa_paging_limit']);
 };
 
 $container['esa'] = function($container) {

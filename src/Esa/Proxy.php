@@ -24,13 +24,13 @@ class Proxy
     /**
      * @var int
      */
-    private $pageLimit;
+    private $pagingLimit;
 
-    public function __construct(Client $esa, Cache $cache, int $pageLimit)
+    public function __construct(Client $esa, Cache $cache, int $pagingLimit)
     {
         $this->esa = $esa;
         $this->cache = $cache;
-        $this->pageLimit = $pageLimit;
+        $this->pagingLimit = $pagingLimit;
     }
 
     /**
@@ -64,15 +64,14 @@ class Proxy
         $results = [];
         $page = $firstPage;
 
-        do {
+        for ($i = 0; $i < $this->pagingLimit && !is_null($page); $i++) {
             $result = $this->esa->$methodName(array_merge($params, [
                 'per_page' => 100,
                 'page' => $page,
             ]));
             $results = array_merge($results, $result[$methodName]);
             $page = $result['next_page'];
-
-        } while (!is_null($page));
+        }
 
         return $results;
     }
