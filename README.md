@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- PHP 7.1+
+- PHP 7.1.3+
 
 ## Installation
 
