@@ -6,7 +6,6 @@ use Polidog\Esa\Client;
 use Symfony\Component\Console\Application;
 use Ttskch\EsaCli\Command\GrepCommand;
 use Ttskch\EsaCli\Esa\Proxy;
-use Ttskch\EsaCli\EsaCli;
 
 $container = new Container();
 
@@ -21,10 +20,6 @@ $container['console'] = function($container) {
 
 $container['cache'] = function() {
     return new FilesystemCache(__DIR__ . '/../var/cache');
-};
-
-$container['esa_cli'] = function($container) {
-    return new EsaCli($container['console']);
 };
 
 $container['grep_command'] = function($container) {
