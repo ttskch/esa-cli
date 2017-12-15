@@ -9,7 +9,7 @@ use Ttskch\EsaCli\Esa\Proxy;
 
 $container = new Container();
 
-require_once __DIR__ . '/parameters.php';
+require __DIR__ . '/parameters.php';
 
 $container['console'] = function($container) {
     $console = new Application('ttskch/esa-cli');
