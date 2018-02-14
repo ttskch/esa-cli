@@ -6,9 +6,11 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Takashi Kanemoto"
+            "name": "Takashi Kanemoto",
+            "email": "kanemoto.takashi@gmail.com"
         }
     ],
+    "type": "project",
     "require": {
         "php": ">=7.1.3",
         "symfony/console": "^4.0",
