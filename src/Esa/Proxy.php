@@ -33,6 +33,11 @@ class Proxy
         $this->pagingLimit = $pagingLimit;
     }
 
+    public function getPost(int $id): array
+    {
+        return $this->esa->post($id);
+    }
+
     /**
      * @param null|string $query
      * @param bool $force
