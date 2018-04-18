@@ -31,6 +31,17 @@ $ esa grep -h   # see help
 
 Learn about queries for `-s` at https://docs.esa.io/posts/104
 
+### diff
+
+Just print diff url for the post because [esa doesn't provide Revision API yet](https://docs.esa.io/posts/102#%E4%BB%8A%E5%BE%8C%E3%81%AE%E5%AE%9F%E8%A3%85%E4%BA%88%E5%AE%9A).
+
+```bash
+$ esa diff <post_id> <base_revision_number>
+https://team_name.esa.io/posts/<post_id>/revisions/compare/<compare_revision_number>...<base_revision_number>/diff
+
+$ esa diff -h   # see help
+```
+
 ### sed
 
 // todo
